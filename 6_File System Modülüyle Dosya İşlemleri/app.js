@@ -1,12 +1,12 @@
 var http = require("http");
-var fs = require("fs");
+var fs = require("fs");//File System modülünü projeye dahil etme
 
 http.createServer(function(req,res){
 	fs.readFile("page.html",function(err,data){//Dosya okuma
 		res.end(data);
 	});
 	fs.appendFile("metin.txt","Ahmet",function(err){//Dosyaya ekleme
-		if(err) throw err;
+		if(err) throw err;//Hata yakalanırsa bastırma
 		console.log("Kaydedildi!");
 	});
 	fs.open("newfile.txt","w",function(err){//Dosya oluşturma

@@ -1,5 +1,5 @@
 var url = require("url");
-var adr = "http://localhost:8080/default.html?year=2017&month=Şubat";
+var adr = "http://localhost:8080/default.html?year=2017&month=Şubat";//Denemek için manuel olarak adres girme
 var q = url.parse(adr,true);
 
 /*if(q.pathname == "/login") console.log("Giriş sayfasına hoşgeldiniz!");*/
