@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Index</title>
+    <style>
+        body {
+            background-color: #63ba8f;
+        }
+        
+        main {
+            display: block;
+            text-align: center;
+            color: #f4f4f4;
+            font-family: 'ABeeZee', sans-serif;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        
+        h1 {
+            font-size: 75px;
+        }
+        
+        h2 {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Profil Sayfası</h1>
+        <h2>
+            <%=kisi%> kişisinin profil sayfasındasınız!</h2>
+        <p>
+            <%=kisi%> kişisinin yaşı :
+                <%= veri.yas %>
+        </p>
+        <p>
+            <%=kisi%> kişisinin işi :
+                <%= veri.is %>
+        </p>
+        <ul>
+            <% veri.yabanci_diller.forEach((item) =>{  %>
+                <li>
+                    <%=item%>
+                </li>
+                <%  }) %>
+        </ul>
+        <% if(veri.admin){ %>
+            <p>
+                <%=kisi%> adminsin </p>
+
+            <% } %>
+    </main>
+</body>
+
+</html>
