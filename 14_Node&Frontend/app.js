@@ -1,15 +1,29 @@
+const bodyParser = require("body-parser")
 const express = require("express")
 const app = express()
 
 app.set("view engine", "ejs")
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use("/assets", express.static("assets"))
 
 app.get("/", (req, res) => {
     // res.send("ana sayfadasınız")
-    res.sendFile(__dirname + "/index.html")
+    res.render('index')
 })
 
 app.get("/hakkimda", (req, res) => {
-    res.sendFile(__dirname + "/hakkimda.html")
+    res.render('hakkimda')
+})
+
+app.get("/iletisim", (req, res) => {
+    res.render('iletisim')
+})
+
+app.post("/iletisim", (req, res) => {
+    console.log(req.body.isim)
+    console.log(req.body.mail)
+    console.log(req.body.mesaj)
+    res.end();
 })
 
 app.get("/profil/:isim", (req, res) => {
